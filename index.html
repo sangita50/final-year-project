@@ -11,27 +11,29 @@
     
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
-    
+
+    <!-- favicon and title -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <title>Voice Assisant</title>
-    
+
   </head>
       
   
   <body>
-    <!-- navbar need serious ui changes here -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">VoiceGPT</a>
+    <nav class="navbar navbar-expand-lg ">
+      <a class="navbar-brand" href="#" >VoiceGPT</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <!-- active -->
+          <li class="nav-item">
+            <a class="nav-link" href="#" >Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#" >About</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -40,23 +42,23 @@
         </form>
       </div>
     </nav>
-    <!-- navbar need serious ui changes here -->
 
-
-
-    <h1 class="text-center my-2 py-2"> Welcome To Voice GPT</h1>
-    <div class="container py-12">
-      <input type="text" id="textInput" placeholder="Type here...">
-      <button type="button" id="start" class="btn btn-success mx-2">Start</button>
-      <!-- <button id="stop" type="button" class="btn btn-danger mx-2">Stop</button> -->
+    
+    <h1 class="text-center my-2 py-2" style="color: #ffffff;"> Welcome To Voice GPT</h1>
+    <div class="container input py-12">
+      <input type="text" id="textInput" class="textField" placeholder="Type here...">
+      <button type="button" id="start" class="voiceButton">
+        <img src="assets/microphone-lines-solid.png" alt="Mic" class="mic-icon">
+      </button>
     </div>
 
     <div class="container chats">
-      <h2>YOUR RESPONSES</h2>
-
-      <div>Question: Your Question</div>
-      <div>Answer: Response will appear here</div>
-      <hr>
+      <h3 style="margin: 20px auto; ">YOUR RESPONSES</h3>
+      <div class="chatbox">
+        <div>Question: Your Question</div>
+        <div>Answer: Response will appear here</div>
+        <hr>
+      </div>
 
     </div>
 

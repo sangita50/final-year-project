@@ -1,8 +1,7 @@
-    
-
-const messages    = [];
-const textInput   = document.getElementById('textInput');
-const voiceButton = document.getElementById('start');
+const messages      = [];
+const textInput     = document.getElementById('textInput');
+const voiceButton   = document.getElementById('start');
+const chatContainer = document.querySelector(".chatbox");
       
 async function postData(query) {  
 // console.log(query);      
@@ -27,17 +26,12 @@ try {
     } catch (error) {
         console.error('Fetch error:', error);
     }
-}
-          
-      // const populateUsingGpt = (input)=>{ 
-      //   postData(input).then((data) => {
-      //     document.querySelector(".chats").innerHTML = document.querySelector(".chats").innerHTML + `<div>Question: ${input}</div>  <div>Answer: ${data.answer}</div> <hr>`
-      //   });
-      // }
+}        
 
 async function populateUsingGpt(input){
     postData(input).then((data) => {
-        document.querySelector(".chats").innerHTML = document.querySelector(".chats").innerHTML + `<div>Question: ${input}</div>  <div>Answer: ${data.answer}</div> <hr>`
+        chatContainer.innerHTML = chatContainer.innerHTML + `<div>Question: ${input}</div>  <div>Answer: ${data.answer}</div> <hr>`
+        chatContainer.scrollTop = chatContainer.scrollHeight; // Scroll to bottom
     });
 }
 
@@ -53,7 +47,6 @@ recognition.addEventListener('result', e => {
         .map(result => result[0])
         .map(result => result.transcript)
         .join('')
-
     globalTranscript = transcript 
 });
 
@@ -82,10 +75,7 @@ textInput.addEventListener('keypress', (event)=>{
         globalText = ""
 
         // Empty the input field
-        // event.target.value = '';
-            // textInput.value = inputValue;
-            // Here you can perform any action with the input value
-            // const data = handleText(inputValue);
+        event.target.value = '';
     }
 });
 
